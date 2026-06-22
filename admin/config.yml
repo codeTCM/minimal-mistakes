@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master 
 commit_message: "更新文章 {{title}}"
 
 media_folder: "assets/images/uploads"
