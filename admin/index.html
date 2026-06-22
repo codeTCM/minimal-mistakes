@@ -1,12 +1,24 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>博客后台管理</title>
-  <link rel="stylesheet" href="https://unpkg.com/netlify-cms@2/dist/cms.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>博客后台管理</title>
+<!-- 身份验证核心脚本，缺少会邮箱未确认 -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/netlify-cms@2/dist/cms.css" />
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@2/dist/netlify-cms.js"></script>
+<script src="https://unpkg.com/netlify-cms@2/dist/netlify-cms.js"></script>
+<script>
+// 跳转修复，邀请链接自动切回后台页面
+if (window.location.hash.includes('invite_token')) {
+  netlifyIdentity.on('init', function(user) {
+    if (!user) {
+      netlifyIdentity.open();
+    }
+  });
+}
+</script>
 </body>
 </html>
