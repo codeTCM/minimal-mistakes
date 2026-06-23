@@ -120,10 +120,7 @@ author:
   location         : "milkway"
   email            :
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-square-envelope"
-      # url: "mailto:00xx00@internet.ru"
+  links: []
 
 # Site Footer
 footer:
